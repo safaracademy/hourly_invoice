@@ -464,9 +464,8 @@ $("emailPdf").onclick=async()=>{
   busy(true);
   try{
     const p=preparePdf(); if(!p) return;
-    const tm=totalMin();
     const subject=`Invoice ${S.invNo} - ${S.supName}`;
-    const body=`Hi Safar Payroll,\n\nPlease find attached invoice ${S.invNo} for ${hm(tm)} of work, totalling ${gbp(total())}, due by ${uk(S.dueDate)}.\n\nThanks,\n${S.supName}`;
+    const body=`Assalamu Alaykum wa Rahmatullahi wa Barakatuh,\n\nDear Payroll,\n\nPlease find attached invoice ${S.invNo}, totalling ${gbp(total())}, due by ${uk(S.dueDate)}.\n\nJazakAllahu khayran,\n${S.supName}`;
     if(canShareFile(p)){
       let copied=false;
       try{ await navigator.clipboard.writeText(PAYROLL); copied=true; }catch(e){}
